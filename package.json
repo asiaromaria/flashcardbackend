@@ -1,0 +1,27 @@
+{
+  "name": "flashcard",
+  "version": "1.0.0",
+  "description": "Flashcard API (mongoDB, node.js, express.js)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asiaromaria/flashcardbackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asiaromaria/flashcardbackend/issues"
+  },
+  "homepage": "https://github.com/asiaromaria/flashcardbackend#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "mongoose": "^5.13.7",
+    "nodemon": "^2.0.12"
+  }
+}
