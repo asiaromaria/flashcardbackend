@@ -2,12 +2,14 @@ const connectDB = require('./startup/db');
 const express = require('express');
 const app = express();
 
-const cards = require('./routes/cards');
+const cards = require('./routes/deck');
+const decks = require('./routes/deck');
 
 connectDB();
 
 app.use(express.json());
 app.use('/api/cards', cards);
+app.use('api/decks', decks);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
