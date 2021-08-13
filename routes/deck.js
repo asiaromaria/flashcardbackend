@@ -1,4 +1,4 @@
-const { Card, validateC } = require('../models/cards');
+const { Card, validateC, deckSchema } = require('../models/cards');
 const { Deck, validateD } = require('../models/cards');
 const express = require('express');
 const router = express.Router();
@@ -116,13 +116,11 @@ router.delete('/:deckId', async (req, res) => {
       if (error) return res.status(400).send(error);
   
       const card = new Card({
-        name: req.body.name,
-        description: req.body.description,
-        category: req.body.category,
-        level: req.body.level,
+        question: req.body.question,
+        answer: req.body.answer,
       });
       await card.save();
-  
+      
       return res.send(card);
     } catch (ex) {
       return res.status(500).send(`Internal Server Error: ${ex}`);
@@ -137,10 +135,8 @@ router.delete('/:deckId', async (req, res) => {
       const card = await Card.findByIdAndUpdate(
         req.params.id,
         {
-          name: req.body.name,
-          description: req.body.description,
-          category: req.body.category,
-          level: req.body.price,
+          question: req.body.question,
+          answer: req.body.answer,
         },
         { new: true }
       );
