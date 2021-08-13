@@ -16,7 +16,7 @@ const Card = mongoose.model('Card', cardSchema);
 
 function validateCard(card) {
     const schema = Joi.object({
-        question: Joi.string().min(2).max(50).required(),
+        question: Joi.string().min(2).max(80).required(),
         answer: Joi.string().required(),
     });
     return schema.validate(card);
