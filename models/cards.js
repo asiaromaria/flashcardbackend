@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Joi = require ('joi');
 
 
-
-
-
-
 const cardSchema = new mongoose.Schema({
     question:  { type: String, required: true, minlength: 2, maxlength: 255 },
     answer: { type: String, required: true, minlength: 2, maxlength: 255 },
