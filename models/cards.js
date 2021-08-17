@@ -21,7 +21,6 @@ function validateCard(card) {
 const deckSchema = new mongoose.Schema({
     name:  { type: String, required: true, minlength: 2, maxlength: 255 },
     description: { type: String, required: true, minlength: 2, maxlength: 255 },
-    level: { type: String, required: true },
     cardSet: [cardSchema],
     dateModified: { type: Date, default: Date.now },
 });
@@ -32,7 +31,6 @@ function validateDeck(deck) {
     const schema = Joi.object({
         name: Joi.string().min(2).max(50).required(),
         description: Joi.string().required(),
-        level: Joi.string().required(),
         cardSet: Joi.array(),
     });
     return schema.validate(deck);

@@ -36,7 +36,6 @@ router.post("/", async (req, res) => {
     const deck = new Deck({
       name: req.body.name,
       description: req.body.description,
-      level: req.body.level,
       cardSet: req.body.cardSet,
     });
     await deck.save();
@@ -57,7 +56,7 @@ router.put('/:deckId', async (req, res) => {
       {
         name: req.body.name,
         description: req.body.description,
-        level: req.body.level,
+        cardSet: req.body.cardSet,
       },
       { new: true }
     );
