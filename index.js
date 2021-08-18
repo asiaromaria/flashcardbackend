@@ -6,7 +6,7 @@ const cors = require('cors');
 // const cards = require('./routes/deck');
 const decks = require('./routes/deck');
 
-connectDB();
+connectDB(); 
 
 
 app.use(cors())
